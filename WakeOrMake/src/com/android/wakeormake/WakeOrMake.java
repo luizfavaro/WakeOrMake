@@ -40,16 +40,27 @@ public class WakeOrMake extends Activity {
 			MsgInfo( "Por algum motivo desconhecido não consegui criar as tabelas nescessárias! " + erro, "Erro no Banco de Dados!");
 			}
 	}
-	                        //    S OU N       HH:MM           S OU N        S OU N         S OU N         S OU N        S OU N        S OU N           S OU N  DIRETORIOMUSIC  DIGITAR TITLE   CODIGO TIPO DESBLOQUEIO -> FAZER CLASSE VERIFICAR ESTE CAMPO E EXECUTAR A VALIDAÇÃO.
-	public void GravaBanco( String ativo, String hora, String segunda, String terca, String quarta, String quinta, String sexta, String sabado, String domingo, String toque, String titulo, Integer desbloqueio  ){
+	                                    //    S OU N       HH:MM           S OU N        S OU N         S OU N         S OU N        S OU N        S OU N           S OU N  DIRETORIOMUSIC  DIGITAR TITLE   CODIGO TIPO DESBLOQUEIO -> FAZER CLASSE VERIFICAR ESTE CAMPO E EXECUTAR A VALIDAÇÃO.
+	public void GravaBanco( Integer ID, String ativo, String hora, String segunda, String terca, String quarta, String quinta, String sexta, String sabado, String domingo, String toque, String titulo, Integer desbloqueio  ){
 		try {
 			Alarmes = openOrCreateDatabase(NomeBanco, MODE_WORLD_READABLE, null);
-			String SQL = "INSERT INTO tabnAlarmes (ativo, hora, segunda, terca, quarta, quinta, sexta, sabado, domingo, toque, titulo, desbloqueio) VALUES ( ativo = '" + ativo + "', hora = '" + hora + "', segunda = '" + segunda + "', terca = '" + terca + "', quarta = '" + quarta + "', quinta = '" + quinta + "', sexta = '" + sexta +"', sabado = '" + sabado + "', domigo = '" + domingo + "', toque = '" + toque + "', titutlo = '" + titulo + "', desbolqueio = " + Integer.toString(desbloqueio) + ")";
+			String SQL = "INSERT INTO tabnAlarmes (id, ativo, hora, segunda, terca, quarta, quinta, sexta, sabado, domingo, toque, titulo, desbloqueio) VALUES ( id = " + Integer.toString( ID ) + " ativo = '" + ativo + "', hora = '" + hora + "', segunda = '" + segunda + "', terca = '" + terca + "', quarta = '" + quarta + "', quinta = '" + quinta + "', sexta = '" + sexta +"', sabado = '" + sabado + "', domigo = '" + domingo + "', toque = '" + toque + "', titutlo = '" + titulo + "', desbolqueio = " + Integer.toString(desbloqueio) + ")";
 			Alarmes.execSQL(SQL);
 		} catch (Exception erro) {
 			MsgInfo( "Por algum motivo desconhecido não consegui criar as tabelas nescessárias! " + erro, "Erro no Banco de Dados!");
 			}
 	}
+	
+	public void AlteraBanco( Integer ID, String ativo, String hora, String segunda, String terca, String quarta, String quinta, String sexta, String sabado, String domingo, String toque, String titulo, Integer desbloqueio  ){
+		try {
+			Alarmes = openOrCreateDatabase(NomeBanco, MODE_WORLD_READABLE, null);
+			String SQL = "UPDATE tabnAlarmes SET ativo = '" + ativo + "', hora = '" + hora + "', segunda = '" + segunda + "', terca = '" + terca + "', quarta = '" + quarta + "', quinta = '" + quinta + "', sexta = '" + sexta +"', sabado = '" + sabado + "', domigo = '" + domingo + "', toque = '" + toque + "', titutlo = '" + titulo + "', desbolqueio = " + Integer.toString(desbloqueio) + " WHERE id = " + Integer.toString(ID);
+			Alarmes.execSQL(SQL);
+		} catch (Exception erro) {
+			MsgInfo( "Por algum motivo desconhecido não consegui criar as tabelas nescessárias! " + erro, "Erro no Banco de Dados!");
+			}
+	}
+	
 	public ArrayList<Integer> PegaAlarmes(){
 		ArrayList<Integer> AlarmesDaTabela = new ArrayList<Integer>();
 		cursor = Alarmes.rawQuery("SELECT * FROM tabAlarmes", null);
