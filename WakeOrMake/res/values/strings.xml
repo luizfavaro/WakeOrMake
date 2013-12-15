@@ -4,5 +4,8 @@
     <string name="app_name">"Wake or Make "</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="repetir">Repetir</string>
+    <string name="todos_os_dias">Todos os dias</string>
+    <string name="hora">Hora</string>
 
 </resources>

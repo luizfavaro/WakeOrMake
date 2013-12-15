@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:text="Título do alarme" />
+
+    <EditText
+        android:id="@+id/tituloAlarme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
+        android:text="hora" />
+
+    <EditText
+        android:id="@+id/horaAlarme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="time" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="87dp"
+        android:layout_height="wrap_content"
+        android:text="Repetir" />
+
+    <CheckBox
+        android:id="@+id/checkSegunda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Todos_os_dias" />
+
+    <CheckBox
+        android:id="@+id/checkTodos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Domingo" />
+
+    <CheckBox
+        android:id="@+id/checkTerca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Segunda" />
+
+    <CheckBox
+        android:id="@+id/checkQuarta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terça" />
+
+    <CheckBox
+        android:id="@+id/checkQuinta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quarta" />
+
+    <CheckBox
+        android:id="@+id/checkSexta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quinta" />
+
+    <CheckBox
+        android:id="@+id/checkSabado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexta" />
+
+    <CheckBox
+        android:id="@+id/checkDomingo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sábado" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Gravar" />
+    
+</LinearLayout>
