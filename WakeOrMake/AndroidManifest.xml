@@ -25,7 +25,6 @@
         <activity
             android:name="com.android.wakeormake.NovoAlarme"
             android:label="Novo alarme" 
-            android:theme="@android:style/Theme.NoTitleBar"
             android:screenOrientation="portrait"/>
     </application>
 
